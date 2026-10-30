@@ -28,8 +28,8 @@ Open http://localhost:3000. To check a production build, run `npm run build`; se
 4. Authenticated admin dashboard and product/theme/order management.
 5. Customer storefront and final deployment preparation.
 
-The catalog API, secure order API/server action, and authenticated admin workspace are implemented. Configure environment variables as described in [API setup](docs/api.md), then follow [admin setup](docs/admin.md) for the owner account and dashboard. The customer storefront routes remain placeholders for Step 5. Real credentials must never be committed.
+All five implementation phases are complete. The Home, Products and Order storefront, catalog API, secure checkout, and authenticated admin workspace are implemented. [Open the deployed private Site](https://atelier-commerce-nafis.sacredbud.chatgpt.site). Configure local environment variables as described in [API setup](docs/api.md), then follow [admin setup](docs/admin.md) to create the permanent owner account and add real products. Real credentials must never be committed.
 
-Steps 2–4 are configured in the dedicated Supabase project. See [database setup](supabase/README.md) for the schema, access model, storage restrictions, and verified database tests. `theme_settings` is the canonical theme table. Order totals are calculated transactionally from database prices by the service-only checkout function.
+The dedicated Supabase project supplies the catalog, orders, theme, Auth and Storage. See [database setup](supabase/README.md), [storefront behavior](docs/storefront.md), and [deployment details](docs/deployment.md). `theme_settings` is the canonical theme table. Order totals are calculated transactionally from database prices by the service-only checkout function. The store currency is BDT.
 
-Deployment to Sites is pending the later phases and verification of its Next.js-compatible server runtime. This setup has not been deployed.
+The standard Next.js production build and the Sites/Vinext hosting build were verified. The Site is deployed privately; customer-facing public access has not been enabled. Checkout records orders without online payment collection. Temporary test accounts and catalog/order fixtures have been removed.

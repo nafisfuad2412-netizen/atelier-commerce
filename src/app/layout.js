@@ -1,4 +1,3 @@
-import SiteFrame from "@/components/site-frame";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +12,7 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:bg-white focus:p-4">
           Skip to content
         </a>
-        <SiteFrame>{children}</SiteFrame>
+        {children}
       </body>
     </html>
   );

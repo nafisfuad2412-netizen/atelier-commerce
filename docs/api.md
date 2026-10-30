@@ -54,7 +54,7 @@ The email limit is basic abuse control, not identity verification: an attacker c
 
 ## Validation completed
 
-- `npm test`: seven groups covering input tampering, normalization, privileged-client isolation, receipts, error handling, and HTTP request boundaries.
+- `npm test`: the full suite now has 17 passing groups; checkout coverage includes input tampering, normalization, privileged-client isolation, receipts, error handling, and HTTP request boundaries.
 - `npm run build`: production compilation passed for pages, route handlers, and the server action.
 - `supabase/tests/checkout.sql`: passed against the hosted database, covering denied browser RPC access, authoritative totals, retries, mismatched payloads, malformed input, stock/missing products, and shared email limits. Fixtures roll back.
 - `tests/api-smoke.mjs`: passed against the production Next.js server and hosted Supabase, including actual order insertion, receipt-only responses, concurrent retries, and HTTP errors. Temporary orders, request-ledger rows, and product were removed; the database returned to an empty catalog/order state.

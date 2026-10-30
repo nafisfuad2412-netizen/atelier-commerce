@@ -16,7 +16,7 @@ Supabase advisors currently report [leaked-password protection disabled](https:/
 - **Orders:** paginated customer orders, customer contact and shipping details, item snapshots, totals, and status changes. The signed-in admin cannot rewrite order totals or customer details through the database API.
 - **Appearance:** primary/background hex colors and three system font families, with an immediate local preview and saved database settings. Application to the customer storefront follows in Step 5.
 
-Counts and empty states reflect the actual database; no demo products or orders remain. Amounts display two decimals without assuming a currency; the storefront currency is still to be selected during Step 5. Order dates use Dhaka time.
+Counts and empty states reflect the actual database; no demo products or orders remain. Admin amounts display two decimals; the store currency selected in Step 5 is BDT. Order dates use Dhaka time.
 
 ## Security and session flow
 
@@ -42,4 +42,4 @@ The database save follows a successful upload. Existing image files are removed 
 
 `tests/admin-live.mjs` is an operator-run development test, not an automatic production test. It refuses to overwrite an existing owner account, creates temporary Auth users without sending email, and cleans them up on normal completion. It holds fixtures for browser checks until stdin input or a 15-minute timeout. An abrupt process termination may require operator cleanup. Never use it on a populated production store.
 
-The site has not been deployed; the storefront pages remain the planned Step 5 work.
+The customer storefront is complete and [deployed privately](https://atelier-commerce-nafis.sacredbud.chatgpt.site). The saved appearance is applied to storefront requests. See [storefront behavior](storefront.md) and [deployment details](deployment.md).

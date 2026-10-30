@@ -1,0 +1,5 @@
+"use client";
+
+export default function CatalogControls({ query, stock, sort }) {
+  return <form action="/products" className="store-catalog-controls"><div className="store-search"><label htmlFor="catalog-search" className="sr-only">Search products</label><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input id="catalog-search" name="q" defaultValue={query} maxLength={100} placeholder="Find something you’ll love…"/><button>Search</button></div><div className="store-catalog-selects"><label>Availability<select name="stock" defaultValue={stock}><option value="all">All products</option><option value="in_stock">In stock</option></select></label><label>Sort by<select name="sort" defaultValue={sort}><option value="newest">Newest first</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option></select></label><button className="store-filter-button">Apply</button></div></form>;
+}
