@@ -14,7 +14,7 @@ Copy `.env.example` to `.env.local`, then configure the project's publishable ke
 - `src/lib/products.js`: `getProducts({ page, pageSize })` and `getProduct(id)` for server components and handlers.
 - `src/app/actions/orders.js`: `placeOrder(input)` server action sharing validation and checkout behavior with the HTTP endpoint.
 
-Admin authentication, session refresh, and route protection are deferred to Step 4. The scaffold's `/admin` route still has no data or controls.
+Admin authentication, session refresh, route protection, and management controls are implemented in Step 4. See [admin setup](admin.md).
 
 ## GET /api/products
 

@@ -18,7 +18,7 @@ The initial schema is applied to the hosted project as `atelier_commerce_initial
 
 The admin allowlist is a singleton stored outside the exposed schema. Its configured email was supplied by the owner and applied separately; it is not included in this public repository. A narrow private security-definer function checks the caller's Auth user ID against the authoritative user record, confirmed email, allowlist, anonymous flag, deletion status, and active ban. User-editable metadata and JWT email claims do not grant admin rights.
 
-The admin login account has not been created yet. Create and verify the configured email through Supabase Auth during Step 4. No password has been generated or stored.
+The admin workspace is implemented. Create the permanent account and verify the configured email through Supabase Auth as described in [admin setup](../docs/admin.md). No permanent password has been generated or stored. Temporary test accounts were removed after verification.
 
 For a fresh clone of the database, run `schema.sql` as a database operator, then set the owner-supplied email separately:
 

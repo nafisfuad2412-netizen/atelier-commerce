@@ -1,0 +1,12 @@
+.admin-workspace { --admin-green: #214b3b; background: #f6f7f3; min-height: 100dvh; color: #263b30; }
+.admin-input { width: 100%; border: 1px solid #dce1d9; border-radius: 10px; background: #fff; padding: 11px 13px; color: #263b30; font-size: 14px; }
+.admin-input:disabled { background: #f4f5f1; opacity: .7; }
+.admin-label { display: block; margin-bottom: 7px; color: #536359; font-size: 12px; font-weight: 600; }
+.admin-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 10px; background: #214b3b; color: white; padding: 11px 17px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s; }
+.admin-button:hover { background: #173b2d; }
+.admin-button:disabled { cursor: wait; opacity: .55; }
+.admin-secondary { background: white; border: 1px solid #dce1d9; color: #354d3e; }
+.admin-secondary:hover { background: #f0f3eb; }
+.admin-panel { background: white; border: 1px solid #e5e8df; border-radius: 16px; }
+.admin-workspace input[type="color"] { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .admin-workspace * { transition-duration: 0s !important; scroll-behavior: auto !important; } }
