@@ -30,6 +30,6 @@ Open http://localhost:3000. To check a production build, run `npm run build`; se
 
 The current scaffold does not perform authentication, accept orders, or expose admin data. No environment variables or credentials are required for this phase. Real credentials must never be committed.
 
-Before the database phase, select a Supabase project and confirm the admin email. The brief uses both `theme` and `theme_settings`; use one canonical table consistently during that phase. Order totals must be computed from database prices on the server.
+Step 2 is configured in the dedicated Supabase project. See [database setup](supabase/README.md) for the schema, access model, storage restrictions, and verified database tests. `theme_settings` is the canonical theme table. Order totals must be computed from database prices on the server in Step 3.
 
 Deployment to Sites is pending the later phases and verification of its Next.js-compatible server runtime. This setup has not been deployed.
