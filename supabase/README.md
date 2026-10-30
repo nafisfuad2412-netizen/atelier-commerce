@@ -31,9 +31,9 @@ Do not expose `atelier_private` through the Data API. Do not commit the configur
 
 ## Checkout boundary
 
-Guest checkout will call a Next.js server action in Step 3. It must validate name/email/address and product quantities, re-read current prices and stock, calculate totals using integer minor units, and insert an order using server-only credentials. It must reject client-supplied prices, totals, status, and item descriptions as authoritative values. Rate limiting and submission idempotency belong at that server boundary. No direct public order insert grant is present.
+Guest checkout now calls a Next.js server action or JSON API, using server-only credentials to invoke the transaction in `checkout.sql`. The function revalidates input, locks product rows, calculates totals using integer minor units, and inserts pending orders with authoritative snapshots. Rate limits and idempotency are shared across server instances in the database. No direct public order insert grant is present. See [API setup](../docs/api.md).
 
-`items_ordered` will hold item snapshots with product ID, title, quantity, and unit price. The database currently enforces a nonempty array of at most 100 lines; Step 3 must validate each line. Historical snapshots remain after a product is deleted.
+`items_ordered` holds item snapshots with product ID, title, quantity, and unit price. The table enforces a nonempty array of at most 100 lines; the checkout function validates each line and builds these snapshots from the catalog. Historical snapshots remain after a product is deleted.
 
 ## Images
 

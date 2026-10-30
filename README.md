@@ -28,8 +28,8 @@ Open http://localhost:3000. To check a production build, run `npm run build`; se
 4. Authenticated admin dashboard and product/theme/order management.
 5. Customer storefront and final deployment preparation.
 
-The current scaffold does not perform authentication, accept orders, or expose admin data. No environment variables or credentials are required for this phase. Real credentials must never be committed.
+The catalog API and secure order API/server action are implemented. Configure environment variables as described in [API setup](docs/api.md). The storefront and admin routes remain placeholders; the admin route exposes no customer data or controls. Real credentials must never be committed.
 
-Step 2 is configured in the dedicated Supabase project. See [database setup](supabase/README.md) for the schema, access model, storage restrictions, and verified database tests. `theme_settings` is the canonical theme table. Order totals must be computed from database prices on the server in Step 3.
+Steps 2 and 3 are configured in the dedicated Supabase project. See [database setup](supabase/README.md) for the schema, access model, storage restrictions, and verified database tests. `theme_settings` is the canonical theme table. Order totals are calculated transactionally from database prices by the service-only checkout function.
 
 Deployment to Sites is pending the later phases and verification of its Next.js-compatible server runtime. This setup has not been deployed.
